@@ -1,280 +1,280 @@
 {
-"version":"0.1.0"
-"name":"bircoin"
-"instructions":[
-{
-"name":"initialize"
-"accounts":[
-{
-"name":"programSettings"
-"isMut":true
-"isSigner":false
-}
-{
-"name":"authority"
-"isMut":true
-"isSigner":true
-}
-{
-"name":"systemProgram"
-"isMut":false
-"isSigner":false
-}
-]
-"args":[]
-}
-{
-"name":"createToken"
-"accounts":[
-{
-"name":"payer"
-"isMut":true
-"isSigner":true
-}
-{
-"name":"programSettings"
-"isMut":false
-"isSigner":false
-}
-{
-"name":"mintAccount"
-"isMut":true
-"isSigner":true
-}
-{
-"name":"metadataAccount"
-"isMut":true
-"isSigner":false
-}
-{
-"name":"tokenProgram"
-"isMut":false
-"isSigner":false
-}
-{
-"name":"tokenMetadataProgram"
-"isMut":false
-"isSigner":false
-}
-{
-"name":"systemProgram"
-"isMut":false
-"isSigner":false
-}
-{
-"name":"rent"
-"isMut":false
-"isSigner":false
-}
-]
-"args":[
-{
-"name":"tokenName"
-"type":"string"
-}
-{
-"name":"tokenSymbol"
-"type":"string"
-}
-{
-"name":"tokenUri"
-"type":"string"
-}
-]
-}
-{
-"name":"mintToken"
-"accounts":[
-{
-"name":"programSettings"
-"isMut":false
-"isSigner":false
-}
-{
-"name":"mintAuthority"
-"isMut":true
-"isSigner":true
-}
-{
-"name":"recipient"
-"isMut":false
-"isSigner":false
-}
-{
-"name":"mintAccount"
-"isMut":true
-"isSigner":false
-}
-{
-"name":"associatedTokenAccount"
-"isMut":true
-"isSigner":false
-}
-{
-"name":"tokenProgram"
-"isMut":false
-"isSigner":false
-}
-{
-"name":"associatedTokenProgram"
-"isMut":false
-"isSigner":false
-}
-{
-"name":"systemProgram"
-"isMut":false
-"isSigner":false
-}
-]
-"args":[
-{
-"name":"amount"
-"type":"u64"
-}
-]
-}
-{
-"name":"burnTokenHendle"
-"accounts":[
-{
-"name":"programSettings"
-"isMut":false
-"isSigner":false
-}
-{
-"name":"authority"
-"isMut":true
-"isSigner":true
-}
-{
-"name":"mintAccount"
-"isMut":true
-"isSigner":false
-}
-{
-"name":"associatedTokenAccount"
-"isMut":true
-"isSigner":false
-}
-{
-"name":"tokenProgram"
-"isMut":false
-"isSigner":false
-}
-]
-"args":[
-{
-"name":"amount"
-"type":"u64"
-}
-]
-}
-]
-"accounts":[
-{
-"name":"ProgramSettings"
-"type":{
-"kind":"struct"
-"fields":[
-{
-"name":"authority"
-"type":"publicKey"
-}
-{
-"name":"initialized"
-"type":"bool"
-}
-]
-}
-}
-]
-"events":[
-{
-"name":"TokensMinted"
-"fields":[
-{
-"name":"mint"
-"type":"publicKey"
-"index":false
-}
-{
-"name":"destination"
-"type":"publicKey"
-"index":false
-}
-{
-"name":"amount"
-"type":"u64"
-"index":false
-}
-{
-"name":"timestamp"
-"type":"i64"
-"index":false
-}
-]
-}
-{
-"name":"TokensBurned"
-"fields":[
-{
-"name":"mint"
-"type":"publicKey"
-"index":false
-}
-{
-"name":"source"
-"type":"publicKey"
-"index":false
-}
-{
-"name":"amount"
-"type":"u64"
-"index":false
-}
-{
-"name":"timestamp"
-"type":"i64"
-"index":false
-}
-]
-}
-]
-"errors":[
-{
-"code":6000
-"name":"EmptyTokenName"
-"msg":"Token name cannot be empty"
-}
-{
-"code":6001
-"name":"EmptyTokenSymbol"
-"msg":"Token symbol cannot be empty"
-}
-{
-"code":6002
-"name":"EmptyTokenUri"
-"msg":"Token URI cannot be empty"
-}
-{
-"code":6003
-"name":"UnauthorizedAccess"
-"msg":"Unauthorized access"
-}
-{
-"code":6004
-"name":"InvalidMintAmount"
-"msg":"Invalid mint amount"
-}
-{
-"code":6005
-"name":"InvalidBurnAmount"
-"msg":"Invalid burn amount"
-}
-{
-"code":6006
-"name":"ProgramIsNotInitialized"
-"msg":"Program is not initialized"
-}
-]
+  "version": "0.1.0",
+  "name": "bircoin",
+  "instructions": [
+    {
+      "name": "initialize",
+      "accounts": [
+        {
+          "name": "programSettings",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "authority",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "createToken",
+      "accounts": [
+        {
+          "name": "payer",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "programSettings",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "mintAccount",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "metadataAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenMetadataProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "rent",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "tokenName",
+          "type": "string"
+        },
+        {
+          "name": "tokenSymbol",
+          "type": "string"
+        },
+        {
+          "name": "tokenUri",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "mintToken",
+      "accounts": [
+        {
+          "name": "programSettings",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "mintAuthority",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "recipient",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "mintAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "associatedTokenAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "associatedTokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "burnTokenHendle",
+      "accounts": [
+        {
+          "name": "programSettings",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "authority",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "mintAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "associatedTokenAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "ProgramSettings",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "authority",
+            "type": "publicKey"
+          },
+          {
+            "name": "initialized",
+            "type": "bool"
+          }
+        ]
+      }
+    }
+  ],
+  "events": [
+    {
+      "name": "TokensMinted",
+      "fields": [
+        {
+          "name": "mint",
+          "type": "publicKey",
+          "index": false
+        },
+        {
+          "name": "destination",
+          "type": "publicKey",
+          "index": false
+        },
+        {
+          "name": "amount",
+          "type": "u64",
+          "index": false
+        },
+        {
+          "name": "timestamp",
+          "type": "i64",
+          "index": false
+        }
+      ]
+    },
+    {
+      "name": "TokensBurned",
+      "fields": [
+        {
+          "name": "mint",
+          "type": "publicKey",
+          "index": false
+        },
+        {
+          "name": "source",
+          "type": "publicKey",
+          "index": false
+        },
+        {
+          "name": "amount",
+          "type": "u64",
+          "index": false
+        },
+        {
+          "name": "timestamp",
+          "type": "i64",
+          "index": false
+        }
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "EmptyTokenName",
+      "msg": "Token name cannot be empty"
+    },
+    {
+      "code": 6001,
+      "name": "EmptyTokenSymbol",
+      "msg": "Token symbol cannot be empty"
+    },
+    {
+      "code": 6002,
+      "name": "EmptyTokenUri",
+      "msg": "Token URI cannot be empty"
+    },
+    {
+      "code": 6003,
+      "name": "UnauthorizedAccess",
+      "msg": "Unauthorized access"
+    },
+    {
+      "code": 6004,
+      "name": "InvalidMintAmount",
+      "msg": "Invalid mint amount"
+    },
+    {
+      "code": 6005,
+      "name": "InvalidBurnAmount",
+      "msg": "Invalid burn amount"
+    },
+    {
+      "code": 6006,
+      "name": "ProgramIsNotInitialized",
+      "msg": "Program is not initialized"
+    }
+  ]
 }
